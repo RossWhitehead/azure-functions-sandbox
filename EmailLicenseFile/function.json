@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "license",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "licenses/{name}",
+      "connection": "AzureWebJobStorage"
+    },
+    {
+      "name": "$return",
+      "type": "sendGrid",
+      "direction": "out",
+      "apiKey" : "SendGridAPIKey",
+      "to": "{ToEmail}",
+      "from": "{FromEmail}",
+      "subject": "SendGrid output bindings"
+    }
+  ]
+}
